@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+var collections;	 //声明这个全局变量
+if(!collections) 	//如果它原本不存在
+	collections={};		//创建一个顶层命名空间
+
+collections.sets = {}	//将sets命名空间导入这它的内部
+
+collections.sets = (function namespace(){
+	return {
+		AbstractSet: AbstractSet,
+		NotSet: NotSet
+	};
+}());
+</script>
+</body>
+</html>
