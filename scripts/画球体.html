@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<label>画板如下</label>
+<div class="canvas">
+	<canvas id="myCanvas" width="500" height="140"></canvas>
+</div>
+
+<script type="text/javascript">
+
+var ctx = document.getElementById('myCanvas')
+			.getContext('2d');
+
+/*
+	使用arc绘制一个圆形
+	function arc() {}
+	param1
+	param2		param1, param2指定画布一个点
+	param3		指定圆弧半径
+	param4		圆弧起始点
+	param5		圆弧结束点
+	param6		是否按顺时针（true：顺时针	false：逆时针）
+*/
+
+var circle = {
+	x:70,
+	y:70,		//circle.x, circle.y表示圆点坐标
+	radius:30,	//半径
+	fillText: '18',
+};
+
+function drawCircle() {
+	ctx.fillStyle='lightgreen';
+	ctx.lineWidth = '1';
+
+	ctx.beginPath();
+	ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2, false);
+	// ctx.closePath();
+	ctx.fill();
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(circle.x, circle.y, circle.radius, Math.PI/2, Math.PI * 2, false);
+	// ctx.closePath();
+	ctx.fill();
+	ctx.stroke();
+
+	//在圆上画数字
+	ctx.fillStyle='lightgrey';
+	ctx.fillStroke='black';
+	ctx.fillText(circle.fillText, (circle.x - circle.radius)+circle.radius/2, circle.y);
+	ctx.strokeText(circle.fillText, (circle.x - circle.radius)+circle.radius/2, circle.y);
+
+	//(circle.x - circle.radius)+circle.radius/2
+}
+
+drawCircle();
+</script>
+</body>
+</html>
