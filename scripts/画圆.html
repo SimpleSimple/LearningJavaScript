@@ -32,18 +32,24 @@ var circle = {
 	fillText: '18',
 };
 
-function drawCircle() {
+var position={
+	offset: 50
+};
+
+var queue=[];
+
+function drawCircle(circleX, circleY, numVal) {
 	ctx.fillStyle='lightgreen';
 	ctx.lineWidth = '1';
 
 	ctx.beginPath();
-	ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2, false);
+	ctx.arc(circleX, circleY, circle.radius, 0, Math.PI * 2, false);
 	// ctx.closePath();
 	ctx.fill();
 	ctx.stroke();
 
 	ctx.beginPath();
-	ctx.arc(circle.x, circle.y, circle.radius, Math.PI/2, Math.PI * 2, false);
+	ctx.arc(circleX, circleY, circle.radius, Math.PI/2, Math.PI * 2, false);
 	// ctx.closePath();
 	ctx.fill();
 	ctx.stroke();
@@ -51,13 +57,30 @@ function drawCircle() {
 	//在圆上画数字
 	ctx.fillStyle='lightgrey';
 	ctx.fillStroke='black';
-	ctx.fillText(circle.fillText, (circle.x - circle.radius)+circle.radius/2, circle.y);
-	ctx.strokeText(circle.fillText, (circle.x - circle.radius)+circle.radius/2, circle.y);
+	ctx.fillText(numVal, (circle.x - circle.radius)+circle.radius/2, circle.y);
+	ctx.strokeText(numVal, (circle.x - circle.radius)+circle.radius/2, circle.y);
 
+	queue.push(numVal);
+	/* 计算圆形原点 */
 	//(circle.x - circle.radius)+circle.radius/2
 }
 
-drawCircle();
+function drawLine(startPosX, endPosY){
+	ctx.fillStyle='yellow';
+	ctx.strokeStyle='black';
+	ctx.lineWidth=1;
+
+	ctx.beginPath();
+	ctx.moveTo(circle.x, circle.y);
+	ctx.lineTo(startPosX, endPosY);
+	ctx.closePath();
+	ctx.fill();
+
+	ctx.stroke();
+}
+
+drawCircle(circle.x, circle.y, circle.fillText);
+drawLine(circle.x+position.offset, circle.y+position.offset);
 </script>
 </body>
 </html>
