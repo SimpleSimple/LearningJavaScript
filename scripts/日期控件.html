@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>日期控件</title>
+	<style type="text/css" href="My97DatePicker/skin/WdatePicker.css"></style>
+	<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<div class="main">
+	<div class="form-section">
+		<input type="text" name="StartDate" class="Wdate" onfocus="datePicker();" placeholder="开始时间" 
+		readonly>
+		<input type="text" name="EndDate" class="Wdate" onfocus="datePicker();" placeholder="结束时间" readonly>
+	</div>
+</div>
+<script type="text/javascript">
+function datePicker(){
+	return WdatePicker({
+		doubleCalendar:true
+	})
+}
+</script>
+</body>
+</html>
