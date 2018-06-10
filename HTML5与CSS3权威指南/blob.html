@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blob对象</title>
+	<script type="text/javascript" src="/scripts/CommonHelper.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+function showFileType(){
+	debugger
+	var file;
+	file = document.getElementById('file').files[0];
+
+	var size = document.getElementById('size');
+	var type =  document.getElementById('type');
+	if(file !== undefined){
+		size.innerHTML = file.size+'Byte'+' ---- '+getFileSize(file.size);
+		type.innerHTML=file.type;
+	}
+}
+</script>
+选择文件:
+<input type="file" name="file" id="file">
+<input type="button" name="" value="显示文件信息" onclick="showFileType();">
+文件字节长度:<span id="size"></span>
+文件类型:<span id="type"></span>
+</body>
+</html>
