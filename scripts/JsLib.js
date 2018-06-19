@@ -7,10 +7,14 @@
 
 var UrlHelper ={
     getQueryParam : function(urlParam){
-        
+
+    }
+    , pageReload:function(){
+        window.location.href = window.location.href;
     }
 
 };
+
 
 
 var CommonHelper = {
