@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<p>方法处理器</p>
+<button v-on:click="eventObj">event对象(1)</button>
+<button @click="eventObj">event对象(2)</button>
+
+<p>内联处理器</p>
+<button v-on:click="say('hi')">Say Hi</button>
+</div>
+
+<script type="text/javascript">
+/*
+	1、
+		内联处理器可以用于传参的事件调用
+
+	2、
+		方法处理器不确定是否可以传递参数
+*/
+var app=new Vue({
+	el: '#app',
+	data:{
+		message: 'Hello Vue.js！'
+	},
+	methods:{
+		eventObj: function(event){
+			//this.message = '<'+event.target.tagName+'>'+this.message
+			alert('<'+event.target.tagName+'>'+this.message);
+		},
+		say: function(message, event){
+			alert(event);
+
+			alert(message);
+		}
+	}
+});
+</script>
+</body>
+</html>
