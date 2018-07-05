@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>对象</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+	创建对象有三种方式：
+	1、对象直接量
+		var obj={};
+	2、通过new创建
+		var obj=new Object();
+	3、Object.create()
+*/
+
+var LoginAccount={};
+LoginAccount.userId=1000;
+LoginAccount.userName='多多';
+alert(JSON.stringify(LoginAccount));
+
+/*
+	了解Object.create()
+*/
+// var o1=Object.create();
+// alert(typeof o1);
+// alert(JSON.stringify(o1) );	// 这样会报错
+
+var o2=Object.create({});
+alert(typeof o2);
+alert(JSON.stringify(o2) );
+
+</script>
+</body>
+</html>
