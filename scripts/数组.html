@@ -6,6 +6,11 @@
 <body>
 <script type="text/javascript" src="commonhelper.js"></script>
 <script type="text/javascript">
+var println = window.document && document.writeln;
+var print = window.document && document.write;
+var log = console.log;
+
+
 var a1=[,,,];	//长度为3，数组内应该也是没有值，也是一个空数组，书里这里有错误
 var a2=new Array(3);	//长度为3的空数组
 
@@ -22,6 +27,21 @@ var a4 = [undefined];
 document.writeln(0 in a3);
 document.writeln(0 in a4);
 
+
+/*
+*	数组 - 转换方法
+*	Date：7.15
+*/
+var colors=['red','green','blue'];
+document.writeln('-------------------------');
+document.writeln('<br/>');
+//  toLocalString()、toString()、valueOf()
+
+log('color.toString() => '+colors.toString());
+log('color.valueOf() => '+colors.valueOf());
+log('color.toLocalString() => '+colors.toLocalString);
+log(colors);
 </script>
+
 </body>
 </html>
