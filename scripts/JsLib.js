@@ -95,7 +95,7 @@ function isValidityBrithBy18IdCard(idCard18) {
     }
 }
 
-function $$(id) {
+function getById(id) {
     return typeof id === 'String' ? document.getElementById(id) : '';
 }
 

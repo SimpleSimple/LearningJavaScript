@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- <script type="text/javascript" src="CommonHelper.js"></script>
+<script type="text/javascript">
+// 检测是否正确的身份证号
+var assert = CommonHelper.idCardValidate('123451234512345');
+alert(assert);
+
+</script> -->
+<script type="text/javascript" src="StringHelper.js"></script>
+<!-- <script type="text/javascript">
+// 原型链
+function SuperType(){
+	this.property=true;
+}
+
+SuperType.prototype.getSuperValue=function(){
+	return this.property;
+}
+
+function SubType(){
+	this.subproperty=false;
+}
+// 继承SuperType
+SubType.prototype=new SuperType();
+
+var instance=new SubType();
+alert('> '+instance.getSuperValue());
+
+// // 添加新方法
+// SubType.prototype.getSubValue=function(){
+// 	return this.subproperty;
+// }
+// 重写超类中方法
+SubType.prototype.getSuperValue=function(){
+	return false;
+}
+
+var instance=new SubType();
+alert('=> '+instance.getSuperValue());
+
+
+
+
+
+</script> -->
+<script type="text/javascript">
+function SuperType(){
+	this.colors=['red','blue','green'];
+} 
+
+function SubType() {
+	// 继承了SuperType
+	SuperType.call(this);
+}
+
+var instance1=new SubType();
+instance1.colors.push('black');
+alert(instance1.colors);
+
+var instance2=new SubType();
+alert(instance2.colors);
+
+String.prototype.format=function(val){
+	alert(val);
+}
+
+var string=new String();
+string.format('hello');
+</script>
+</body>
+</html>
