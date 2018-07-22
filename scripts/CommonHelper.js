@@ -4,13 +4,16 @@
 // console.log(a.length);
 //window.String = 
 var CommonHelper = {
-    formatDate: function() {
-    	throw e;
+    _log: function () {
+        return window.console && console.log;
     },
-    formatDateTime: function() {
-    	throw e;
+    formatDate: function () {
+        throw e;
     },
-    idCardValidate: function(val) {
+    formatDateTime: function () {
+        throw e;
+    },
+    idCardValidate: function (val) {
         if (val.length == 15) {
             return isValidityBrithBy15IdCard(val);
         } else if (val.length == 18) {
@@ -22,6 +25,21 @@ var CommonHelper = {
             }
         } else {
             return false;
+        }
+    },
+    toJsonArray: function (array) {
+        if (!array || array === null) {
+            return [];
+        }
+        else if (array instanceof Array) {
+            var json = '[{';
+            for (var i in array) {
+                //console.log(i);
+                var obj = array[i];
+                json += "'" + obj.name + "':'" + obj.value + "'";
+            }
+            json += "}]";
+            return JSON.stringify(json);
         }
     }
 };
