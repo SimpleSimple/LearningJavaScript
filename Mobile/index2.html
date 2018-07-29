@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美食节</title>
+<style type="text/css">
+html,body{margin:0px; padding: 0px;}
+ul,li,ol,dl,dt,dd{list-style: none;}
+h1,h2,h3,h4{margin:0;}
+#img-box{
+	width: 100%;
+	height:225px;
+	z-index:1;
+}
+#img-box img{
+	width: 100%;
+	height:100%;
+}
+.materials h4, .materials ul li{
+	float: left;
+}
+
+/* 底部样式 */
+footer{
+width: 100%;border:solid 1px #C8C8C8;height: 50px;
+position: absolute;
+bottom: 0;
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+	<div id="img-box">
+		<img src="http://images.meishij.net/p/20130701/a9bd35961dfb789e18d67de7b1455928.jpg" style="background-position:100% 100%;">
+	</div>
+	<div id="content">
+		<div class="materials" id="form-line">
+			<strong>用料</strong>
+			<div class="row-1" style="width: 100%;">
+			<h4 style="font-weight: normal;">主料</h4>
+			<ul>
+			<li>猪肉</li>
+			<li>苦瓜</li>
+			</ul>
+			</div>
+		</div>
+		<div id="form-line">
+		<strong>{{Name}}的做法</strong>
+		
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
