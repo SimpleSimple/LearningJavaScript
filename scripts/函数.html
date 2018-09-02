@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数</title>
+</head>
+<body>
+<script type="text/javascript">
+var log = (window.console && console.log);
+/*
+	1、函数内还可以定义函数
+	2、函数内定义的遍历外部函数无法访问
+*/
+
+function foo(){
+	var x=1;
+	function bar(){
+		var y=2;
+		log('x => '+x);
+	}
+	bar();
+	log('y => '+y);		// 变量y这里无法访问，会报错 ReferenceError: y is not defined
+}
+
+foo();
+
+</script>
+</body>
+</html>
