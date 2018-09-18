@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Extend String</title>
+</head>
+
+<body>
+<script type="text/javascript">
+String.prototype = {
+	isNullOrEmpty: function(strval){
+		if(strval==null || strval == ''){
+			return true;
+		}
+		return false;
+	}	
+}
+
+
+var test='';
+var flag = String.isNullOrEmpty(test);
+console.log(flag);
+</script>
+</body>
+</html>
