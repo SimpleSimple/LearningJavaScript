@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../Assets/lib/jquery.countdown-2.1.0/jquery.countdown.min.js"></script>
+</head>
+
+<body>
+<div id="getting-started"></div>
+
+<script type="text/javascript">
+var countDown=function(date){
+	var nowDay = new Date(date).now();
+}
+
+var log=window.console && console.log;
+// 计算倒计时
+/*var nowDate=new Date();
+log(nowDate);
+*/
+$('#getting-started').countdown('2018/10/01', function(event) {
+	$(this).html(event.strftime('%d 天 %H:%M:%S'));
+});
+
+</script>
+</body>
+</html>
