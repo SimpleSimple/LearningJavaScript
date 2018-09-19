@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closures</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+Example. The following program fragment defines a higher-order function (function returning a 
+                       程序片段
+function) add with a parameter x and a nested function addX. The nested function addX has access 
+									   嵌套函数
+to x, because x is in the lexical scope of addX. The function add returns a closure; this closure 
+
+contains (1) a reference to the function addX, and (2) a copy of the environment around addX in 
+
+which x has the value given in that specific invocation of add.
+*/
+
+function add(x){
+	function addX(y){
+		return y+x;
+	}
+	return addX;
+}
+
+var add1 = add(1);
+var add5= add(5);
+
+console.info( 'add1(3) => '+add1(3) );
+console.info( 'add5(3) => '+add5(3) );
+
+/*
+Note that, as add returns a value of function type, the variables add1 and add5 are also of function type. Invoking add1(3) will return 4, because it assigns 3 to parameter y in the call to addX, using the saved environment for addX where x is 1. Invoking add5(3) will return 8, because while it also assigns 3 to parameter y in the call to addX, it is now using another saved environment for addX where x is 5. So while add1 and add5 both use the same function addX, the associated environments differ, and invoking the closures will bind the name x to two different values in the two invocations, thus evaluating the function to two different results.
+*/
+</script>
+</body>
+</html>
